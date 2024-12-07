@@ -197,6 +197,16 @@ a {
     transition: box-shadow 0.3s ease;
 }
 
+.whywe h3 {
+    margin-bottom: 30px;
+}
+
+.whywe img {
+    float: left;
+    margin-right: 26px;
+    max-height: 300px;
+}
+
 /* css slider */
 .box-area {
     width: 100%;
@@ -488,13 +498,10 @@ a {
     text-align: center;
     margin: 50px 0;
     display: block;
-    text-decoration: underline;
-    text-decoration-color: #494949;
-    text-decoration-line: underline;
-    text-decoration-style: double;
-    text-decoration-thickness: 3px;
-    text-decoration-skip-ink: none;
+
 }
+
+
 
 .trade .mf-item {
     display: grid;
@@ -505,4 +512,83 @@ a {
 .trade .mf-item-img {
     height: 80px;
     background: #eee;
+    overflow: hidden;
 }
+
+.mf-item-img img {
+    height: 80px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.patner {
+    overflow: hidden;
+    padding: 0;
+}
+
+.client-slide img {
+    height: 100px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+@-webkit-keyframes scroll {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-250px * 7));
+              transform: translateX(calc(-250px * 7));
+    }
+  }
+  
+  @keyframes scroll {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-250px * 7));
+              transform: translateX(calc(-250px * 7));
+    }
+  }
+  .client-slider {
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+  }
+  .client-slider::before, .client-slider::after {
+    background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
+    background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+  .client-slider::after {
+    right: 0;
+    top: 0;
+    -webkit-transform: rotateZ(180deg);
+            transform: rotateZ(180deg);
+  }
+  .client-slider::before {
+    left: 0;
+    top: 0;
+  }
+  .client-slider .client-slide-track {
+    -webkit-animation: scroll 40s linear infinite;
+            animation: scroll 40s linear infinite;
+    display: -webkit-box;
+    display: flex;
+    width: calc(250px * 14);
+  }
+  .client-slider .client-slide {
+    height: 100px;
+    width: 250px;
+  }
