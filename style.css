@@ -634,3 +634,17 @@ a {
     height: 100px;
     width: 250px;
 }
+
+.contact {
+    max-width: 600px;
+    margin: 0 auto;
+    backdrop-filter: blur(20px);
+    background: #ffffff24;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.contact * {
+    color: #fff;
+}
