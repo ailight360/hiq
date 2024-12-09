@@ -20,12 +20,8 @@
 body {
     font-family: "Poppins", Arial, sans-serif;
     color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0 auto;
     background: var(--background-color);
-
-    margin-top: 30px;
     font-weight: 400;
     line-height: 1.6;
     font-size: 16px;
@@ -59,6 +55,7 @@ a {
 
 
 /* Container */
+
 .container {
     max-width: 1120px;
     display: grid;
@@ -66,13 +63,18 @@ a {
     gap: 30px;
     width: 100%;
     padding: 10px;
+    margin: 0 auto;
+}
+.header-area svg {
+    position: absolute;
+    z-index: -1;
 }
 
 /* Header */
 .header {
-    background: linear-gradient(90deg, #00ff0000 0%, rgba(137, 243, 54, 1) 50%, #00ff0000 100%);
+    /* background: linear-gradient(90deg, #00ff0000 0%, rgba(137, 243, 54, 1) 50%, #00ff0000 100%);
     -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px); */
     color: var(--white);
     padding: 20px;
     text-align: center;
