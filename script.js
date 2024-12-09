@@ -14,7 +14,9 @@ $(window).scroll(function() {
     }
 });
 
-/* product Slider*/document.querySelectorAll('.best-slider-container').forEach((sliderContainer, index) => {
+/* product Slider*/
+
+document.querySelectorAll('.best-slider-container').forEach((sliderContainer, index) => {
   let currentIndex = 0;
   const slides = sliderContainer.querySelectorAll('.best-slide');
   const dots = sliderContainer.querySelectorAll('.best-dot');
@@ -52,4 +54,25 @@ $(window).scroll(function() {
 
   // Initialize the slider
   updateSlider();
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".hero-slide");
+    let currentSlide = 0;
+    const slideInterval = 3000; // 3 seconds
+
+    const changeSlide = () => {
+        // Remove active class from current slide
+        slides[currentSlide].classList.remove("active");
+        
+        // Move to the next slide or loop back to the first
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // Add active class to the new slide
+        slides[currentSlide].classList.add("active");
+    };
+
+    // Start the slide interval
+    setInterval(changeSlide, slideInterval);
 });

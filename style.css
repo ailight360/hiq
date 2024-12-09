@@ -71,6 +71,7 @@ a {
 /* Header */
 .header {
     background: linear-gradient(90deg, #00ff0000 0%, rgba(137, 243, 54, 1) 50%, #00ff0000 100%);
+    -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
     color: var(--white);
     padding: 20px;
@@ -171,6 +172,24 @@ a {
 
 
 /* Keyframe animation for sliding effect */
+@-webkit-keyframes slide-animation {
+
+    0%,
+    33% {
+        transform: translateX(0%);
+    }
+
+    33.33%,
+    66% {
+        transform: translateX(-100%);
+    }
+
+    66.66%,
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
 @keyframes slide-animation {
 
     0%,
@@ -205,10 +224,12 @@ a {
     float: left;
     margin-right: 26px;
     max-height: 300px;
+    -webkit-filter: invert(1);
+    filter: invert(1);
 }
 
 /* css slider */
-.box-area {
+.hero-area {
     width: 100%;
     height: 100%;
     display: flex;
@@ -216,7 +237,7 @@ a {
     align-items: center;
 }
 
-.box {
+.hero-slide {
     width: 80px;
     height: 400px;
     margin-right: 15px;
@@ -227,11 +248,11 @@ a {
     cursor: pointer;
 }
 
-.box:last-child {
+.hero-slide :last-child {
     margin-right: 0;
 }
 
-.box::before {
+.hero-slide::before {
     content: '';
     width: 100%;
     height: 100%;
@@ -241,13 +262,14 @@ a {
     background: rgba(0, 0, 0, 0.3);
 }
 
-.box img {
+.hero-slide img {
     width: 100%;
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
-.box i {
+.hero-slide i {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -263,7 +285,7 @@ a {
 }
 
 
-.box h2 {
+.hero-slide h2 {
     position: absolute;
     bottom: 30px;
     left: 60px;
@@ -275,7 +297,7 @@ a {
     transition: all linear 0.3s;
 }
 
-.box p {
+.hero-slide p {
     position: absolute;
     bottom: 10px;
     left: 60px;
@@ -287,18 +309,21 @@ a {
     transition: all linear 0.3s;
 }
 
-.box.active h2 {
+.hero-slide.active h2 {
     opacity: 1;
 }
 
-.box.active p {
+.hero-slide.active p {
     opacity: 1;
 }
 
-.active {
+.hero-slide.active {
     width: 100%;
     transition: all linear 0.6s;
 }
+
+
+/* css slider */
 
 .feature {
     display: flex;
@@ -394,6 +419,7 @@ a {
 .best-slide {
     width: 100%;
     height: 300px;
+    -o-object-fit: cover;
     object-fit: cover;
     border-radius: 0px 8px 8px 0px;
     border: 5px solid var(--white);
@@ -468,7 +494,7 @@ a {
     gap: 30px;
 }
 
-.trade-box {
+.trade-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
@@ -489,6 +515,8 @@ a {
 .mf-img img {
     max-width: 100%;
     height: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     margin: 0 auto;
 }
@@ -535,60 +563,62 @@ a {
 
 @-webkit-keyframes scroll {
     0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
+        transform: translateX(0);
     }
+
     100% {
-      -webkit-transform: translateX(calc(-250px * 7));
-              transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
     }
-  }
-  
-  @keyframes scroll {
+}
+
+@keyframes scroll {
     0% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
+        transform: translateX(0);
     }
+
     100% {
-      -webkit-transform: translateX(calc(-250px * 7));
-              transform: translateX(calc(-250px * 7));
+        transform: translateX(calc(-250px * 7));
     }
-  }
-  .client-slider {
+}
+
+.client-slider {
     background: white;
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
     height: 100px;
     margin: auto;
     overflow: hidden;
     position: relative;
-  }
-  .client-slider::before, .client-slider::after {
-    background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
+}
+
+.client-slider::before,
+.client-slider::after {
     background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
     content: "";
     height: 100px;
     position: absolute;
     width: 200px;
     z-index: 2;
-  }
-  .client-slider::after {
+}
+
+.client-slider::after {
     right: 0;
     top: 0;
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
-  .client-slider::before {
+    transform: rotateZ(180deg);
+}
+
+.client-slider::before {
     left: 0;
     top: 0;
-  }
-  .client-slider .client-slide-track {
+}
+
+.client-slider .client-slide-track {
     -webkit-animation: scroll 40s linear infinite;
-            animation: scroll 40s linear infinite;
-    display: -webkit-box;
+    animation: scroll 40s linear infinite;
     display: flex;
     width: calc(250px * 14);
-  }
-  .client-slider .client-slide {
+}
+
+.client-slider .client-slide {
     height: 100px;
     width: 250px;
-  }
+}
