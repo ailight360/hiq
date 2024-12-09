@@ -65,7 +65,7 @@ a {
     padding: 10px;
     margin: 0 auto;
 }
-.header-area svg {
+.header-area img {
     position: absolute;
     z-index: -1;
 }
@@ -148,16 +148,25 @@ a {
     transition: box-shadow 0.3s ease;
 }
 
-/* Footer */
+.footwave {
+    transform: rotate(180deg);
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+
 .footer {
-    background: rgba(255, 255, 255, 0.85);
-    color: var(--primary-color);
+    position: relative;
+}
+
+/* Footer */
+.copyright {
     padding: 20px;
     text-align: center;
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.copyright p {
+    color: var(--white);
 }
 
 /* Responsive Adjustments */
