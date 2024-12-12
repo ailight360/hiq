@@ -653,3 +653,17 @@ a {
     height: 100px;
     width: 250px;
 }
+.contact-infos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 30px;
+}
+.contact-map img{
+    max-width: 100%;
+    height:auto;
+    
+}
+.auth img {
+    max-width: 70px;
+}
